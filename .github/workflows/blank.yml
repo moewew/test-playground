@@ -8,11 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: l3build check -H -q
+    - run: |
+      source ./support/install-texlive.sh
+      l3build check -H -q
       
   documentation:
     name: Documentation
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - run: l3build doc -H -q
+    - run: |
+      source ./support/install-texlive.sh
+      l3build doc -H -q
