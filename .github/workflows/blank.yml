@@ -12,21 +12,17 @@ jobs:
       uses: actions/cache@v1
       with:
         path: /tmp/texlive
-        key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.OS }}-texlive
         restore-keys: |
-          ${{ runner.OS }}-build-${{ env.cache-name }}-
-          ${{ runner.OS }}-build-
-          ${{ runner.OS }}-
+          ${{ runner.OS }}-texlive
     - run:  source ./support/install-texlive.sh
-    - name: Cache TeX live
+    - name: Cache TeX live again
       uses: actions/cache@v1
       with:
         path: /tmp/texlive
-        key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.OS }}-texlive
         restore-keys: |
-          ${{ runner.OS }}-build-${{ env.cache-name }}-
-          ${{ runner.OS }}-build-
-          ${{ runner.OS }}-
+          ${{ runner.OS }}-texlive
     - run: |
            export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
            l3build check -q -H
