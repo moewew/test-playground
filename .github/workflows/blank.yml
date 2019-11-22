@@ -11,5 +11,5 @@ jobs:
     - run:  source ./support/install-texlive.sh
     - run: |
            export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
-           echo $PATH
+           l3build check -q -H
 

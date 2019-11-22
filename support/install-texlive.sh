@@ -29,10 +29,65 @@ tlmgr install l3build
 # latex formats
 tlmgr install latex-bin tex
 
+# metafont
+tlmgr install metafont mfware
+
 # required LaTeX packages
 tlmgr install latex amsmath graphics tools
 
-echo $PATH
+# dependencies
+tlmgr install    \
+  babel          \
+  babel-english  \
+  hyphen-english \
+  biblatex       \
+  biber          \
+  bibtex         \
+  csquotes       \
+  ec             \
+  etoolbox       \
+  iftex          \
+  hyperref       \
+  lm             \
+  lm-math        \
+  logreq         \
+  oberdiek       \
+  psnfss         \
+  unicode-math   \
+  url            \
+  xkeyval
+
+tlmgr install       \
+  babel-german      \
+  babel-french      \
+  hyphen-german     \
+  hyphen-french     \
+  bera              \
+  dvips             \
+  booktabs          \
+  carlisle          \
+  cleveref          \
+  datetime2         \
+  datetime2-english \
+  environ           \
+  fontaxes          \
+  hyphenat          \
+  koma-script       \
+  l3experimental    \
+  libertinus        \
+  libertinus-type1  \
+  listings          \
+  ltxdockit         \
+  microtype         \
+  ms                \
+  mweights          \
+  newtx             \
+  pgf               \
+  pict2e            \
+  tcolorbox         \
+  tracklang         \
+  trimspaces        \
+  xcolor
 
 # Keep no backups (not required, simply makes cache bigger)
 tlmgr option -- autobackup 0
