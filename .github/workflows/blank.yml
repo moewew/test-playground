@@ -9,5 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run:  source ./support/install-texlive.sh
-    - run: echo $PATH
+    - run: |
+           export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
+           echo $PATH
 
