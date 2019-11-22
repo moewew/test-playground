@@ -16,14 +16,8 @@ jobs:
         restore-keys: |
           ${{ runner.OS }}-texlive
     - run:  source ./support/install-texlive.sh
-    - name: Cache TeX live again
-      uses: actions/cache@v1
-      with:
-        path: /tmp/texlive
-        key: ${{ runner.OS }}-texlive
-        restore-keys: |
-          ${{ runner.OS }}-texlive
-    - run: |
+    - name: Run tests
+      run: |
            export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
            l3build check -q -H
 
