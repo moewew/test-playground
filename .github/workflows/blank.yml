@@ -3,9 +3,9 @@ name: CI
 on: [push]
 
 jobs:
-  test:
+  runs-on: ubuntu-latest
+  check:
     name: Test
-    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Cache TeX live
@@ -13,11 +13,23 @@ jobs:
       with:
         path: /tmp/texlive
         key: ${{ runner.OS }}-texlive
-        restore-keys: |
-          ${{ runner.OS }}-texlive
     - run:  source ./support/install-texlive.sh
     - name: Run tests
       run: |
            export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
            l3build check -q -H
+  doc:
+    name: Documentation
+    steps:
+    - uses: actions/checkout@v1
+    - name: Cache TeX live
+      uses: actions/cache@v1
+      with:
+        path: /tmp/texlive
+        key: ${{ runner.OS }}-texlive
+    - run:  source ./support/install-texlive.sh
+    - name: Run tests
+      run: |
+           export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
+           l3build doc -q
 
