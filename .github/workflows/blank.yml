@@ -11,9 +11,7 @@ jobs:
     - name: Cache TeX live
       uses: actions/cache@v1
       with:
-        path:
-          - /tmp/texlive
-          - $HOME/.texlive
+        path: /tmp/texlive
         key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.OS }}-build-${{ env.cache-name }}-
@@ -23,9 +21,7 @@ jobs:
     - name: Cache TeX live
       uses: actions/cache@v1
       with:
-        path:
-          - /tmp/texlive
-          - $HOME/.texlive
+        path: /tmp/texlive
         key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.OS }}-build-${{ env.cache-name }}-
