@@ -29,7 +29,7 @@ jobs:
         path: /tmp/texlive
         key: ${{ runner.OS }}-texlive
     - run:  source ./support/install-texlive.sh
-    - name: Run tests
+    - name: Compile documentation
       run: |
            export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
            l3build doc -q
