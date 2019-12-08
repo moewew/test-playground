@@ -1,3 +1,4 @@
-# test-playground
+Playground
+==========
 
-This is obvisously a test only
+This is only a test repository

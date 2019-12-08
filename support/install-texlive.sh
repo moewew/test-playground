@@ -48,13 +48,15 @@ tlmgr install    \
   etoolbox       \
   iftex          \
   hyperref       \
+  atbegshi       \
+  atveryend      \
+  infwarerr      \
+  letltxmacro    \
+  rerunfilecheck \
   lm             \
   lm-math        \
-  logreq         \
-  oberdiek       \
   psnfss         \
   unicode-math   \
-  url            \
   xkeyval
 
 tlmgr install       \
@@ -64,12 +66,14 @@ tlmgr install       \
   hyphen-french     \
   bera              \
   dvips             \
+  bookmark          \
   booktabs          \
   carlisle          \
   cleveref          \
   datetime2         \
   datetime2-english \
   environ           \
+  epstopdf-pkg      \
   fontaxes          \
   hyphenat          \
   koma-script       \
@@ -82,6 +86,7 @@ tlmgr install       \
   ms                \
   mweights          \
   newtx             \
+  oberdiek          \
   pgf               \
   pict2e            \
   tcolorbox         \
